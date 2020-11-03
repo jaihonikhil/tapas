@@ -183,8 +183,8 @@ def _convert_tables(input_dir):
 def read_questions(input_dir):
   collected_data = {}
   input_file = os.path.join(input_dir,'train_all.json')
-    with tf.gfile.Open(input_file) as f:
-      collected_data.update(json.load(f))
+  with tf.gfile.Open(input_file) as f:
+    collected_data.update(json.load(f))
   return collected_data
 
 
