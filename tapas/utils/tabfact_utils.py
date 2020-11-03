@@ -161,6 +161,7 @@ def read_all_tables(input_dir):
 def _convert_table(table_id, table_text):
   """Parses a table from # separated values format into proto format."""
   rows = []
+  table_text = table_text.replace('"', '')
   with six.StringIO(table_text) as csv_in:
     for index, row in enumerate(csv.reader(csv_in, delimiter='#')):
       cells = [interaction_pb2.Cell(text=text) for text in row]
